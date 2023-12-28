@@ -1,0 +1,4 @@
+---
+- name: Sync packages for Arch-based host
+  ansible.builtin.include_tasks: arch.yml
+  when: ansible_distribution == 'Archlinux'

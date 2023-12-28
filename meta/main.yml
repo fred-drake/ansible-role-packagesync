@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Fred Drake
+  description: Sync packages for a given host, using their package manager
+  company: None
+  role_name: packagesync
+  namespace: fred_drake
+
+  license: MIT
+
+  min_ansible_version: "2.1"
+
+  galaxy_tags: []
+
+dependencies: []

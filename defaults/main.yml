@@ -1,0 +1,10 @@
+---
+packagesync_upgrade: true
+
+packagesync_upgrade_only: false
+
+packagesync_arch_packages_install: []
+
+packagesync_aur_packages_install: []
+
+packagesync_aur_package_manager: yay

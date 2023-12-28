@@ -1,0 +1,44 @@
+---
+- name: Install development packages
+  community.general.pacman:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  loop: "{{ packagesync_arch_packages_install }}"
+  when: not packagesync_upgrade_only
+
+- name: Install yay
+  become: false
+  kewlfft.aur.aur:
+    name: "{{ packagesync_aur_package_manager }}"
+    state: present
+    update_cache: true
+  when: >
+      not packagesync_upgrade_only
+      and packagesync_aur_package_manager is defined
+      and packagesync_aur_package_manager != ""
+
+- name: Install AUR packages
+  become: false
+  kewlfft.aur.aur:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  loop: "{{ packagesync_aur_packages_install }}"
+  when: >
+      not packagesync_upgrade_only
+      and packagesync_aur_package_manager is defined
+      and packagesync_aur_package_manager != ""
+
+- name: Upgrade all packages from official repository
+  community.general.pacman:
+    upgrade: true
+    update_cache: true
+  when: packagesync_upgrade or packagesync_upgrade_only
+
+- name: Upgrade all AUR packages
+  kewlfft.aur.aur:
+    upgrade: true
+    update_cache: true
+    aur_only: true
+  when: packagesync_upgrade or packagesync_upgrade_only
