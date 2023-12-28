@@ -3,6 +3,8 @@ packagesync_upgrade: true
 
 packagesync_upgrade_only: false
 
+packagesync_install_one_at_a_time: false
+
 packagesync_arch_packages_install: []
 
 packagesync_aur_packages_install: []
