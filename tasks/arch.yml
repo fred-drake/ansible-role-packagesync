@@ -4,7 +4,7 @@
     name: "{{ packagesync_arch_packages_install }}"
     state: present
     update_cache: true
-  when: not packagesync_upgrade_only and not packagesync_install_one_at_a_time
+  when: not packagesync_upgrade_only
 
 - name: Install yay
   become: false
