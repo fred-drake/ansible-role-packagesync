@@ -6,7 +6,7 @@
   "python.testing.pytestEnabled": true,
   "yaml.validate": true,
   "yaml.schemaStore.enable": true,
-  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
   "sops.enabled": true,
   "sops.binPath": "/usr/local/bin/sops",
   "yaml.schemas": {
